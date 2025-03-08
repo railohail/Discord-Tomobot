@@ -1,0 +1,13 @@
+# Discord settings
+DISCORD_BOT_TOKEN=
+DISCORD_GUILD=
+
+# Lavalink settings
+LAVALINK_HOST=lavalink
+LAVALINK_PORT=2333
+LAVALINK_PASSWORD=youshallnotpass
+
+# YouTube settings (generate these using youtube-trusted-session-generator)
+YOUTUBE_PO_TOKEN=
+YOUTUBE_VISITOR_DATA=
+YOUTUBE_PLUGIN_VER=dev.lavalink.youtube:youtube-plugin:1.11.5

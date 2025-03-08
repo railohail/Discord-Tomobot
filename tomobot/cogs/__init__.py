@@ -1,0 +1,1 @@
+from .cog_base import CogBase

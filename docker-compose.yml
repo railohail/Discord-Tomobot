@@ -1,0 +1,34 @@
+services:
+  lavalink:
+    image: ghcr.io/lavalink-devs/lavalink:latest
+    container_name: lavalink
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      - SERVER_PORT=${LAVALINK_PORT}
+      - SERVER_ADDRESS=0.0.0.0
+      - LAVALINK_SERVER_PASSWORD=${LAVALINK_PASSWORD}
+    volumes:
+      - ./lavalink-application.yml:/opt/Lavalink/application.yml
+      - lavalink_logs:/opt/Lavalink/logs
+    networks:
+      - bot-network
+
+  discord-bot:
+    build: .
+    container_name: discord-bot
+    restart: unless-stopped
+    depends_on:
+      - lavalink
+    env_file:
+      - .env
+    volumes:
+      - ./tomobot:/app/tomobot
+    networks:
+      - bot-network
+
+networks:
+  bot-network:
+    driver: bridge
+volumes:
+  lavalink_logs:

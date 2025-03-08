@@ -1,0 +1,8 @@
+nextcord
+mafic
+aiohttp
+python-dotenv
+wavelink
+youtube_dl
+PyNaCl
+discord.py
